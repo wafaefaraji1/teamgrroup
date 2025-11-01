@@ -1,15 +1,12 @@
-import React from 'react';
-import { ButtonProps } from '../../interfaces';
+interface ButtonProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+}
 
-const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+export default function Button({ children, onClick }: ButtonProps) {
   return (
-    <button
-      onClick={onClick}
-      className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-    >
-      {text}
+    <button onClick={onClick} className="px-4 py-2 rounded bg-black text-white">
+      {children}
     </button>
-  );
-};
-
-export default Button;
+  )
+}
